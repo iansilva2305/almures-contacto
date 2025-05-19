@@ -3,42 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almures - Muebles de Calidad</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Contacto - ALMURES Consultoría de Branding Bespoke</title>
+    <style>
+        /* Estilos base de ALMURES */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #000000;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Estilos del formulario */
+        .contacto-section {
+            padding: 100px 0;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .contacto-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contacto-info {
+            padding: 40px;
+        }
+
+        .contacto-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-item {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .info-item i {
+            font-size: 24px;
+            color: #8b7355;
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        .info-text h4 {
+            margin: 0 0 10px 0;
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .info-text p, .info-text a {
+            margin: 0;
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .info-text a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .contacto-form {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+            border: 1px solid #333333;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #2a2a2a;
+            border: 1px solid #444444;
+            border-radius: 2px;
+            font-size: 1rem;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #ffffff;
+            background-color: #333333;
+            outline: none;
+            box-shadow: 0 0 0 1px #ffffff;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #777777;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn-enviar {
+            background-color: #000000;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 12px 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1.5px;
+        }
+
+        .btn-enviar:hover {
+            background-color: #ffffff;
+            color: #000000;
+            transform: translateY(-2px);
+        }
+
+        .required {
+            color: #ff4d4d;
+            margin-left: 3px;
+        }
+
+        .form-actions {
+            margin-top: 30px;
+            text-align: right;
+        }
+        
+        .required-notice {
+            color: #999999;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .contacto-container {
+                grid-template-columns: 1fr;
+                padding: 0 30px;
+            }
+
+            .contacto-info {
+                padding: 40px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contacto-container {
+                padding: 0 15px;
+            }
+
+            .contacto-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Almures</h1>
+    <section class="contacto-section">
+        <div class="contacto-container">
+            <div class="contacto-info">
+                <h2>Contacto</h2>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt" style="color: #ffffff;"></i>
+                    <div class="info-text">
+                        <h4>Dirección</h4>
+                        <p>28050 Madrid, España</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone" style="color: #ffffff;"></i>
+                    <div class="info-text">
+                        <h4>Teléfono</h4>
+                        <p><a href="tel:+34665085979">+34 665 085 979</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope" style="color: #ffffff;"></i>
+                    <div class="info-text">
+                        <h4>Email</h4>
+                        <p><a href="mailto:equipo@almures.com">equipo@almures.com</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock" style="color: #ffffff;"></i>
+                    <div class="info-text">
+                        <h4>Horario</h4>
+                        <p>Lunes a Viernes: 9:00 - 18:00</p>
+                    </div>
+                </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="contacto.html" class="active">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h2>Muebles de Calidad para tu Hogar</h2>
-                <p>Diseño, confort y durabilidad en cada pieza</p>
+            
+            <div class="contacto-form">
+                <form id="contactForm" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre<span class="required">*</span></label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="asunto">Asunto</label>
+                        <select id="asunto" name="asunto">
+                            <option value="consulta">Consulta general</option>
+                            <option value="presupuesto">Solicitud de presupuesto</option>
+                            <option value="colaboracion">Colaboración</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje <span class="required">*</span></label>
+                        <textarea id="mensaje" name="mensaje" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <small class="required-notice">Los campos marcados con <span class="required">*</span> son obligatorios</small>
+                        <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                    </div>
+                </form>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Almures. Todos los derechos reservados.</p>
         </div>
-    </footer>
+    </section>
 
-    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Mostrar indicador de carga
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Enviando...';
+            
+            // Enviar datos al webhook de Make
+            const formData = new FormData(this);
+            
+            fetch('https://hook.eu2.make.com/nsrkuc43g97shw8t5e1vvwd14pon6jti', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la respuesta del servidor');
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.');
+                this.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde o contáctanos por teléfono.');
+            })
+            .finally(() => {
+                // Restaurar el botón
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            });
+        });
+    </script>
 </body>
 </html>
