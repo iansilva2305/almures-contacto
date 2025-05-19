@@ -272,43 +272,57 @@
     </section>
 
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
             
             // Mostrar indicador de carga
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.textContent;
-            submitButton.disabled = true;
-            submitButton.textContent = 'Enviando...';
+            document.getElementById('loading').style.display = 'block';
             
-            // Enviar datos al webhook de Make
-            const formData = new FormData(this);
+            // Obtener los datos del formulario
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const mensaje = document.getElementById('mensaje').value;
             
+            // Crear objeto con los datos
+            const data = {
+                nombre: nombre,
+                email: email,
+                telefono: telefono,
+                mensaje: mensaje
+            };
+            
+            // Enviar datos a Make.com mediante webhook
+            // REEMPLAZA LA URL CON TU WEBHOOK DE MAKE.COM
             fetch('https://hook.eu2.make.com/nsrkuc43g97shw8t5e1vvwd14pon6jti', {
                 method: 'POST',
-                body: formData,
                 headers: {
-                    'Accept': 'application/json'
-                }
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
             })
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Error en la respuesta del servidor');
                 }
-                return response.json();
+                return response.text();
             })
             .then(data => {
-                alert('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.');
-                this.reset();
+                console.log('Éxito:', data);
+                // Ocultar el formulario y mostrar mensaje de éxito
+                document.getElementById('contactForm').reset();
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+                
+                // Después de 5 segundos, ocultar el mensaje de éxito
+                setTimeout(() => {
+                    document.getElementById('success-message').style.display = 'none';
+                }, 5000);
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error('Error:', error);
-                alert('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde o contáctanos por teléfono.');
-            })
-            .finally(() => {
-                // Restaurar el botón
-                submitButton.disabled = false;
-                submitButton.textContent = originalButtonText;
+                document.getElementById('loading').style.display = 'none';
+                alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
             });
         });
     </script>
