@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Almures Muebles</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .contact-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .info-item i {
+            font-size: 24px;
+            color: #8b7355;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .info-text h4 {
+            margin: 0 0 5px 0;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .info-text p {
+            margin: 0;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #8b7355;
+            outline: none;
+        }
+
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .required {
+            color: #e74c3c;
+            margin-left: 3px;
+        }
+
+        .map-container {
+            margin-top: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Almures</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Contacto</h2>
+                <p>Estamos aquí para ayudarte</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Información de Contacto</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-text">
+                            <h4>Dirección</h4>
+                            <p>Calle Principal 123, 28001 Madrid, España</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <h4>Teléfono</h4>
+                            <p>+34 91 123 45 67</p>
+                            <p>Lunes a Viernes: 9:00 - 20:00</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <h4>Email</h4>
+                            <p>info@almures.com</p>
+                            <p>atencioncliente@almures.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-share-alt"></i>
+                        <div class="info-text">
+                            <h4>Síguenos</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2>Envíanos un mensaje</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo <span class="required">*</span></label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+                        <div class="form-group">
+                            <label for="asunto">Asunto</label>
+                            <select id="asunto" name="asunto">
+                                <option value="consulta">Consulta general</option>
+                                <option value="presupuesto">Solicitud de presupuesto</option>
+                                <option value="postventa">Atención postventa</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje <span class="required">*</span></label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <p class="required-notice">Los campos marcados con <span class="required">*</span> son obligatorios</p>
+                            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.123364071475!2d-3.691717424246918!3d40.42300067143948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42289a4a8655821%3A0x8f9311ba0750a51a!2sPuerta%20de%20Alcal%C3%A1!5e0!3m2!1ses!2ses!4v1620000000000!5m2!1ses!2ses" 
+                allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Almures</h3>
+                    <p>Muebles de calidad para tu hogar desde 1995</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> C/ Principal 123, Madrid</p>
+                    <p><i class="fas fa-phone"></i> +34 91 123 45 67</p>
+                    <p><i class="fas fa-envelope"></i> info@almures.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Almures. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Obtener los datos del formulario
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Mostrar mensaje de éxito
+            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+            
+            // Limpiar el formulario
+            this.reset();
+            
+            // Aquí podrías agregar el código para enviar los datos a un servidor
+            // fetch('URL_DEL_WEBHOOK', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify(data)
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     console.log('Éxito:', data);
+            // })
+            // .catch((error) => {
+            //     console.error('Error:', error);
+            //     alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
+            // });
+        });
+    </script>
+</body>
+</html>
